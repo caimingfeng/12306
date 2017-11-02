@@ -1,0 +1,69 @@
+package com.neuedu.tipd.my12306.service;
+
+import java.util.List;
+
+import com.neuedu.tipd.my12306.bean.Circuit;
+
+public interface CircuitService {
+	
+	/*
+	 * 增加新线路
+	 * 
+	 * @author Game
+	 * 
+	 * @Param Circuit
+	 * 
+	 * @return boolean
+	 */
+	public boolean addCircuit(Circuit circuit);
+	
+	/*
+	 * 删除线路
+	 * 
+	 * @author Game
+	 * 
+	 * @Param int circuitId 
+	 * 
+	 * @return boolean 
+	 * 
+	 * 按线路ID删除线路,如果要删除的车站已经售票,则不能删除
+	 */
+	public boolean deleteCircuit(int circuitId);
+	
+	/*
+	 * 修改火车线路
+	 * 
+	 * @author Game
+	 * 
+	 * @Param Circuit
+	 * 
+	 * @return boolean
+	 * 
+	 * 按照线路ID修改线路,但当要修改的车站已经售票,则修改失败
+	 */
+	public boolean updateCircuit(Circuit circuit);
+	
+	/*
+	 * 按车次查询线路信息
+	 *
+	 * @author Game
+	 * 
+	 * @Param int
+	 * 
+	 * @return Circuit
+	 * 
+	 * 按车次查询线路信息,由于车次是主键,仅会返回零或一个线路信息
+	 */
+	public Circuit findCircuitById(int Circuit);
+	
+	/*
+	 * 按站名查询线路信息
+	 * 
+	 * @author Game
+	 * 
+	 * @Param String
+	 * 
+	 * @return List<Circuit>
+	 */
+	public List<Circuit> findCircuitBySName();
+}

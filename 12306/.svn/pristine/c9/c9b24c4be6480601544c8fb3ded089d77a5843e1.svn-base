@@ -1,0 +1,15 @@
+package com.neuedu.tipd.my12306.dao;
+
+import java.util.List;
+
+import com.neuedu.tipd.my12306.bean.Station;
+
+public interface StationDAO {
+ public void addStation(Station station);
+ public void deleteStation(int stationId);
+ public void updateStation(Station station);
+ public Station findStationById(int stationId);
+ public Station findStationByName(String stationName);
+ public List<Station> findStationBySName(String sName);
+ public List<Station> findStationByRailway(String railway);
+}

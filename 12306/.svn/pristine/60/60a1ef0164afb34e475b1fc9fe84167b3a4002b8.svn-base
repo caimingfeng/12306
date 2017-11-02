@@ -1,0 +1,58 @@
+package com.neuedu.tipd.my12306.service;
+
+import com.neuedu.tipd.my12306.bean.Declining;
+
+/*
+ * 递远递减率
+ */
+
+public interface DecliningService {
+	
+	/*
+	 * 修改递远递减率
+	 * 
+	 * @author Game
+	 * 
+	 * @Param Declining
+	 * 
+	 * @return boolean
+	 */
+	public boolean updateDeclining(Declining declining);
+	
+	/*
+	 * 查询递远递减率
+	 * 
+	 * @author Game
+	 * 
+	 * @Param int DecliningId
+	 * 
+	 * @return Declining
+	 */
+	public Declining findDecliningById(int DecliningId);
+	
+	/*
+	 * 新建递减率数据
+	 * 
+	 * @author Game
+	 * 
+	 * @Param Declining
+	 * 
+	 * @return boolean
+	 * 
+	 * 仅允许在建立线路时新建递减率
+	 */
+	public boolean addDeclining(Declining declining);
+	
+	/*
+	 * 删除递减率数据
+	 * 
+	 * @author Game
+	 * 
+	 * @Param int decliningId
+	 * 
+	 * @return boolean
+	 * 
+	 * 仅允许在删除线路时删除递减率
+	 */
+	public boolean deleteDeclining(int decliningId);
+}

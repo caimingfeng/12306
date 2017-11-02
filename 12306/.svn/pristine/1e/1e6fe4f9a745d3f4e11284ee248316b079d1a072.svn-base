@@ -1,0 +1,54 @@
+package com.neuedu.tipd.my12306.service;
+
+import com.neuedu.tipd.my12306.bean.OrderGoods;
+
+/*
+ * 订票信息管理和车票信息管理是一起的,我思路有点乱,你有思路就来和我讨论下.
+ */
+
+public interface OrderGoodsService {
+	
+	/*
+	 * 添加订单
+	 * 
+	 * @author Game
+	 * 
+	 * @Param OrderGoods
+	 * 
+	 * @return boolean
+	 * 
+	 * 订单添加完会直接记录在数据库里,状态默认'未支付',再支付后用修改方法修改订单状态至'已支付'
+	 */
+	public boolean addOrderGoods(OrderGoods ordergoods);
+	
+	/*
+	 * 取消订单
+	 * 
+	 * @author Game
+	 * 
+	 * @Param 
+	 * 
+	 * @return
+	 * 
+	 * 这部分没想好怎么样,你有想法就和我讨论下吧
+	 */
+	public boolean deleteOrderGoods(int orderGoodsId);
+	
+	/*
+	 * 修改订单
+	 * 
+	 * @author Game
+	 * 
+	 * @Param OrderGoods
+	 * 
+	 * @return boolean
+	 * 
+	 * 此处仅允许修改订单状态(从未支付到已支付,如果用户未进行支付用delete取消订单)
+	 */
+	public boolean updateOrderGoods(OrderGoods orderGoodsId);
+	
+	/*
+	 * 按订票人代码查询订单
+	 */
+	public OrderGoods findOrderGoodsByUserId(String userId);
+}
